@@ -1,0 +1,154 @@
+.search-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.meals-container {
+  position: relative;
+}
+.meals-container::After {
+    content: '';
+    background-image: linear-gradient(red, yellow);
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.recipe-list {
+  margin-top: 10px;
+  max-height: 500px;
+  min-height: 250px;
+  overflow-y: hidden;
+}
+
+.recipe-list:hover {
+  overflow-y: auto;
+}
+
+.recipe-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.recipe-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.recipe-list::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  cursor: pointer;
+}
+
+.recipe-img {
+  max-width: 80px;
+  min-width: 80px;
+  border-radius: 16%;
+  overflow: hidden;
+}
+
+.recipe-img img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.recipe-item {
+  padding: 12px;
+  transition: 300ms;
+}
+
+.recipe-item.active {
+  background: #fbe6c7;
+  border-radius: 6px;
+}
+
+.recipe-item:hover {
+  cursor: pointer;
+  background: #fbf4ea;
+}
+
+#meal .category {
+  color: orange;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+#meal .btn,
+#meal .instruction,
+#meal .category {
+  opacity: 0;
+  animation: fadeIn 400ms forwards;
+  animation-delay: 500ms;
+}
+
+#meal {
+  padding-left: 40px;
+  padding-top: 100px;
+}
+
+#meal .image {
+  width: 50%;
+  border-radius: 8%;
+  overflow: hidden;
+  transform: scale(.8);
+  animation: zoomIn 280ms forwards;
+}
+
+
+#meal img {
+  width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+
+#meal .text-end {
+  overflow: hidden;
+  width: 50%;
+  padding: 10px 10px 10px 70px;
+}
+
+#meal .text-end h2 {
+  transform: translateX(100%);
+  animation: slideIn 200ms forwards;
+  animation-delay: 200ms;
+  margin-bottom: 0;
+}
+
+/*
+   Animation
+*/
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(.8);
+    box-shadow: none;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 41px 41px 82px #a3a3a3, -41px -41px 82px #ffffff;
+  }
+}
